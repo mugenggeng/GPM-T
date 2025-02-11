@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import torch
 import torch.nn as nn
-from out_model import  GCNeXt
+from out_model import  GPM-T
 from modules import CFM, MTCA, LocalPointPred, BaseNet
 
 
