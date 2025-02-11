@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import torch
 import torch.nn as nn
-from out_model import  GPM-T
+from out_model import  GPM
 from modules import CFM, MTCA, LocalPointPred, BaseNet
 
 
@@ -16,7 +16,7 @@ class DCAN(nn.Module):
         self.cfm = CFM(cfg)
         self.gcn = nn.Sequential(
             nn.Conv1d(cfg.feat_dim, cfg.temporal_dim, kernel_size=1, stride=1, padding=0), nn.ReLU(),
-            GCNeXt(cfg.temporal_dim,cfg.temporal_dim,cfg.temporal_dim,arch = (2, 4)))
+            GPM(cfg.temporal_dim,cfg.temporal_dim,cfg.temporal_dim,arch = (2, 4)))
         self.start_pred = nn.Sequential(
             nn.Conv1d(cfg.temporal_dim, cfg.temporal_dim, kernel_size=3, stride=1, padding=1), nn.ReLU(),
             nn.Conv1d(cfg.temporal_dim, 1, kernel_size=1), nn.Sigmoid())
