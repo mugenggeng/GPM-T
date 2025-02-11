@@ -401,7 +401,7 @@ class PoincareEmbedding(torch.nn.Module):
 
 
 
-class GCNeXt(nn.Module):
+class GPM(nn.Module):
     def __init__(self,channel_in,
                  n_embd,
                  channel_out,
